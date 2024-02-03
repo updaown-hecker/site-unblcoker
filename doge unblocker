@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .fortnite-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #d04040;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .fortnite-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      background-image: url('https://i.imgur.com/ZQjYx8e.png');
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <button class="fortnite-button">
+    Full Screen
+    <div class="fortnite-icon"></div>
+  </button>
+  <script>
+    var urlObj = new window.URL(window.location.href);
+    var url = "https://derpman.lol/app/";
+    if (url) {
+      var win;
+
+      document.querySelector('button').onclick = function() {
+        if (win) {
+          win.focus();
+        } else {
+          win = window.open();
+          win.document.body.style.margin = '0';
+          win.document.body.style.height = '100vh';
+          var iframe = win.document.createElement('iframe');
+          iframe.style.border = 'none';
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.margin = '0';
+          iframe.src = url;
+          win.document.body.appendChild(iframe);
+        }
+        document.querySelector('button').style.background = 'grey';
+        document.querySelector('button').innerHTML = "Full Screen";
+      };
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+</body>
+</html>
+<iframe src="https://derpman.lol/app/" width="1000" height="800" frameborder="0" allowfullscreen></iframe>
